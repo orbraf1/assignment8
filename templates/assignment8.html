@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {{ super() }}
+    {%  include 'title.html' %}
+    <h2> <br>
+        Name: {{ profile.first_name | default('or', true) | lower() }} {{ profile.last_name | default('braf', true) | lower() }} <br><br>
+    </h2>
+    <h2>
+        Music: {{ genre | default('rock', true) | lower() }} <br><br>
+    </h2>
+    <h2>
+        Hobbies:
+    </h2>
+    <ul>
+        {% for hobby in hobbies %}
+            <li> {{ hobby | upper() }}</li>
+        {% endfor %}
+    </ul>
+    {%  if profile.first_name %}
+            <h3> You're not or braf! </h3>
+    {%  else %}
+        <h3> <a href="https://www.facebook.com/or.braf"> Facebook </a></h3>
+    {% endif %}
+{% endblock %}
+
+
+

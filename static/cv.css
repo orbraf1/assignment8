@@ -1,0 +1,62 @@
+h1 {
+    text-align: center;
+    color: black;
+}
+
+body {
+    background-color: var(--makeUp);
+    font-family: sans-serif;
+}
+:root {
+    --eggplant: #553d67;
+    --makeUp: #99738e;
+    --lightBlue: #3399FF;
+    --lightGrey: #E0E0E0;
+}
+
+#GridContainer {
+    display: grid;
+    grid-template-areas: 
+    'header header header' 
+    'main main main'
+    'left footer right';    
+}
+#ContactMe {
+    grid-area: header;
+    height: 420px;
+    width: 300px;
+    padding: 30px;
+    margin: 20px;
+    border:3px solid black;
+    background-color: var(--lightGrey);
+}
+#CV {
+    grid-area: left;
+}
+#FACEBOOK {
+    grid-area: right;
+}
+div {
+    display: flex;
+    justify-content: center;
+}
+div div { 
+    height: 25px;
+    width: 95px;
+    padding: 30px;
+    margin: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        text-align: center;
+        color: lightGrey;
+    }    
+    body {
+        background-color: var(--eggplant);
+    }
+    #ConactMe {
+        background-color: var(--lightGrey);
+    }
+}
+
